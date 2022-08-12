@@ -75,5 +75,5 @@ int count_digit(int n)
 		counter++;
 	}
 
-	return (counter - 1);
+	return (counter);
 }

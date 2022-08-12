@@ -22,7 +22,7 @@ int print_string(va_list args)
 		_putchar(argument[i]);
 		i++;
 	}
-	return (i - 1);
+	return (i);
 }
 /**
  * print_char - prints a character
