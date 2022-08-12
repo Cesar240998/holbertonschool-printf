@@ -26,7 +26,7 @@ int print_string(va_list args)
 }
 /**
  * print_char - prints a character
- * @arg: va_list arguments from _printf
+ * @args: va_list arguments from _printf
  * Return: number of char printed
  */
 int print_char(va_list args)
