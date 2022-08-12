@@ -25,19 +25,29 @@ int print_int(va_list args)
  */
 void print_number(int n)
 {
-	unsigned int n1;
+	unsigned int n1 = 0;
 
-	if (n < 0)
+	if (n == -2147483648)
+	{
+		n1 = n;
+		_putchar('-');
+		n1 = -n1;
+
+		if (n1 / 10)
+			print_number(n1 / 10);
+		_putchar('0' + (n1 % 10));
+		return;
+	}
+	else if (n < 0)
 	{
 		_putchar('-');
-		n1 = -n;
+		n = -n;
 	}
-	else
-		n1 = n;
 
-	if (n1 / 10)
-		print_number(n1 / 10);
-	_putchar((n1 % 10) + '0');
+	if (n / 10)
+		print_number(n / 10);
+
+	_putchar('0' + (n % 10));
 }
 
 /**
@@ -48,17 +58,22 @@ void print_number(int n)
  */
 int count_digit(int i)
 {
-	unsigned int d = 0;
-	unsigned int u;
+	int counter = 0;
 
-	if (i < 0)
-		u = i * -1;
-	else
-		u = i;
-	while (u != 0)
+	if (n == 0)
+		return (0);
+
+	if (n < 0)
 	{
-		u /= 10;
-		d++;
+		n *= -1;
+		counter++;
 	}
-	return (d);
+
+	while (n != 0)
+	{
+		n /= 10;
+		counter++;
+	}
+
+	return (counter - 1);
 }
