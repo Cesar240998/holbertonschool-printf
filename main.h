@@ -7,9 +7,7 @@
 
 /**
  * struct special_chars - Validate the special char (%?)
- *
  * @op: A char with some option
- *
  * @operation: Pointer to the function that go to print
  */
 
@@ -21,9 +19,7 @@ typedef struct special_chars
 
 /**
  * struct print_operation - Contain and call the function to print
- *
  * @flag: A flag to validate if exist a special char (%?).
- *
  * @print: function to print something.
  */
 
