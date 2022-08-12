@@ -56,22 +56,22 @@ void print_number(int n)
  * @i: integer to evaluate
  * Return: number of digits
  */
-int count_digit(int n)
+int count_digit(int i)
 {
 	int counter = 0;
 
-	if (n == 0)
+	if (i == 0)
 		return (0);
 
-	if (n < 0)
+	if (i < 0)
 	{
-		n *= -1;
+		i *= -1;
 		counter++;
 	}
 
-	while (n != 0)
+	while (i != 0)
 	{
-		n /= 10;
+		i /= 10;
 		counter++;
 	}
 
