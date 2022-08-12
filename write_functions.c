@@ -12,7 +12,7 @@ int _putchar(char c)
 	static char buf[200];
 	static int i;
 
-	if (c == -1)
+	if (c == -1 || i >= 200)
 	{
 		write(1, &buf, i);
 		i = 0;
