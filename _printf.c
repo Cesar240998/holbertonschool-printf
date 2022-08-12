@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 	va_list arguments;
 	int i = 0, count = 0, add = 0;
-	operation_t p = {0, NULL};
+	validates_t p = {0, NULL};
 
 	va_start(arguments, format);
 	if (!format || (format[0] == '%' && !format[1]))
