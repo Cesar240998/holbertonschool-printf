@@ -26,9 +26,7 @@ int print_string(va_list args)
 }
 /**
  * print_char - prints a character
- * @l: va_list arguments from _printf
- * @f: pointer to the struct flags that determines
- * if a flag is passed to _printf
+ * @arg: va_list arguments from _printf
  * Return: number of char printed
  */
 int print_char(va_list args)
@@ -41,9 +39,7 @@ int print_char(va_list args)
 
 /**
  * print_percent- Print a percentage symbol
- *
  * @args: va_list like argument
- *
  * Return: 0;
  */
 
