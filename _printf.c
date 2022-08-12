@@ -35,9 +35,7 @@ int _printf(const char *format, ...)
 			pfunc = get_print(*p);
 			pfunc(arguments, &flags);
 		} else
-		{	_putchar(*p);
-			count++;
-		}
+			count += _putchar(*p);
 	}
 	va_end(arguments);
 	return (count);
