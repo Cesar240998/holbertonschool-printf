@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			if (p.flag == 1)
 			{
 				add = p.print(arguments);
-				count += add;
+				count += add + 1;
 				i += 1;
 				continue;
 			}
