@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * choose_option - Find if the flag match with an existence and
+ * ch_option - Find if the flag match with an existence and
  * give the correct function.
  *
  * @s: Character to pass
