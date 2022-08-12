@@ -18,6 +18,7 @@ operation_t ch_option(char s)
 		{'c', print_char},
 		{'s', print_string},
 		{'i', print_int},
+		{'%', print_percent},
 		{'\0', NULL}
 	};
 	int i = 0;

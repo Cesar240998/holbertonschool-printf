@@ -41,3 +41,16 @@ int print_char(va_list args)
 	return (0);
 }
 
+/**
+ * print_percent- Print a percentage symbol
+ *
+ * @args: va_list like argument
+ *
+ * Return: 0;
+ */
+
+int print_percent(va_list args __attribute__((unused)))
+{
+	_putchar('%');
+	return (0);
+}
