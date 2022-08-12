@@ -40,7 +40,7 @@ int _printf(const char *format, ...);
 operation_t ch_option(char s);
 int print_string(va_list args);
 int print_char(va_list args);
-int print_percent(va_list args __attribute__((unused)))
+int print_percent(va_list args __attribute__((unused)));
 
 int _putchar(char c);
 
