@@ -56,7 +56,7 @@ void print_number(int n)
  * @i: integer to evaluate
  * Return: number of digits
  */
-int count_digit(int i)
+int count_digit(int n)
 {
 	int counter = 0;
 
