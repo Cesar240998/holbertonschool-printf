@@ -3,9 +3,7 @@
 /**
  * print_string - loops through a string and prints
  * every character
- * @l: va_list arguments from _printf
- * @f: pointer to the struct flags that determines
- * if a flag is passed to _printf
+ * @args: va_list arguments from _printf
  * Return: number of char printed
  */
 int print_string(va_list args)
@@ -24,7 +22,7 @@ int print_string(va_list args)
 		_putchar(argument[i]);
 		i++;
 	}
-	return (i - 1);
+	return (i);
 }
 /**
  * print_char - prints a character
