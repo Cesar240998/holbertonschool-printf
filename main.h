@@ -13,8 +13,8 @@
 
 typedef struct validates
 {
-        int flag;
-        int (*print)(va_list args);
+	int flag;
+	int (*print)(va_list args);
 } validates_t;
 
 int print_int(va_list args);
@@ -36,8 +36,8 @@ int _putchar(char c);
 
 typedef struct specifiers
 {
-        int op;
-        int (*oper)(va_list args);
+	int op;
+	int (*oper)(va_list args);
 } specifiers_t;
 
 #endif
