@@ -44,4 +44,7 @@ int print_string(va_list l, flags_t *f);
 int print_char(va_list l, flags_t *f);
 int print_percent(va_list l, flags_t *f);
 
+int _putchar(char c);
+int _puts(char *str);
+
 #endif

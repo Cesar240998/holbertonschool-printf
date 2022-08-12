@@ -13,9 +13,9 @@ int print_int(va_list l, flags_t *f)
 	int res = count_digit(n);
 
 	if (f->space == 1 && f->plus == 0 && n >= 0)
-		res += putchar(' ');
+		res += _putchar(' ');
 	if (f->plus == 1 && n >= 0)
-		res += putchar('+');
+		res += _putchar('+');
 	if (n <= 0)
 		res++;
 	print_number(n);
@@ -33,7 +33,7 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		n1 = -n;
 	}
 	else
@@ -41,7 +41,7 @@ void print_number(int n)
 
 	if (n1 / 10)
 		print_number(n1 / 10);
-	putchar((n1 % 10) + '0');
+	_putchar((n1 % 10) + '0');
 }
 
 /**

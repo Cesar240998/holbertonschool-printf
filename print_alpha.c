@@ -16,7 +16,7 @@ int print_string(va_list l, flags_t *f)
 
 	if (!s)
 		s = "(null)";
-	return (puts(s));
+	return (_puts(s));
 }
 
 /**
@@ -29,7 +29,7 @@ int print_string(va_list l, flags_t *f)
 int print_char(va_list l, flags_t *f)
 {
 	(void)f;
-	putchar(va_arg(l, int));
+	_putchar(va_arg(l, int));
 	return (1);
 }
 
@@ -43,5 +43,5 @@ int print_percent(va_list l, flags_t *f)
 {
         (void)l;
         (void)f;
-        return (putchar('%'));
+        return (_putchar('%'));
 }
