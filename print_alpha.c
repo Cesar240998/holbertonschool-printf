@@ -8,17 +8,24 @@
  * if a flag is passed to _printf
  * Return: number of char printed
  */
-int print_string(va_list l, flags_t *f)
+int print_string(va_list args)
 {
-	char *s = va_arg(l, char *);
+	char *argument = va_arg(args, char *);
+	int i = 0;
 
-	(void)f;
+	if (argument == NULL)
+	{
+		write(1, "(null)", 6);
+		return (5);
+	}
 
-	if (!s)
-		s = "(null)";
-	return (_puts(s));
+	while (argument[i])
+	{
+		_putchar(argument[i]);
+		i++;
+	}
+	return (i - 1);
 }
-
 /**
  * print_char - prints a character
  * @l: va_list arguments from _printf
@@ -26,9 +33,11 @@ int print_string(va_list l, flags_t *f)
  * if a flag is passed to _printf
  * Return: number of char printed
  */
-int print_char(va_list l, flags_t *f)
+int print_char(va_list args)
 {
-	(void)f;
-	_putchar(va_arg(l, int));
-	return (1);
+	char character = va_arg(args, int);
+
+	write(1, &character, 1);
+	return (0);
 }
+

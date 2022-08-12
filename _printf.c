@@ -10,36 +10,40 @@
  */
 int _printf(const char *format, ...)
 {
-	int (*pfunc)(va_list, flags_t *);
-	const char *p;
 	va_list arguments;
-	flags_t flags = {0, 0, 0};
-
-	register int count = 0;
+	int i = 0, count = 0, add = 0;
+	operation_t p = {0, NULL};
 
 	va_start(arguments, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	for (p = format; *p; p++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (*p == '%')
+		if (format[i] == '%')
 		{
-			p++;
-			if (*p == '%')
+			i++;
+			if (format[i] == '%')
 			{
-				count += _putchar('%');
+				_putchar('%');
+				count++;
 				continue;
 			}
-			pfunc = get_print(*p);
-			count += (pfunc)
-				? pfunc(arguments, &flags)
-				: _printf("%%%c", *p);
-		} else
-			count += _putchar(*p);
+
+			p = ch_option(format[i + 1]);
+			if (p.flag == 1)
+			{
+				add = p.print(arguments);
+				count += add + 1;
+				i += 1;
+				continue;
+			}
+		}
+		_putchar(format[i]);
+		count++;
 	}
-	_putchar(-1);
+
 	va_end(arguments);
 	return (count);
 }

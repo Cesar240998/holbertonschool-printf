@@ -1,29 +1,36 @@
 #include "main.h"
 
 /**
- * get_print - selects the right printing function
- * depending on the conversion specifier passed to _printf
- * @s: character that holds the conversion specifier
- * Description: the function loops through the structs array
- * func_arr[] to find a match between the specifier passed to _printf
- * and the first element of the struct, and then the approriate
- * printing function
- * Return: a pointer to the matching printing function
+ * choose_option - Find if the flag match with an existence and
+ * give the correct function.
+ *
+ * @s: Character to pass
+ *
+ * Return: A print_operation struct with a flag (0 or 1
+ * and a function pointer or NULL.
  */
-int (*get_print(char s))(va_list, flags_t *)
+
+operation_t ch_option(char s)
 {
-	ph func_arr[] = {
-		{'i', print_int},
-		{'s', print_string},
+	operation_t test = {0, NULL};
+	special_chars_t options[] = {
+		{'d', print_int},
 		{'c', print_char},
-		{'d', print_int}
-		};
-	int flags = 4;
+		{'s', print_string},
+		{'i', print_int},
+		{'\0', NULL}
+	};
+	int i = 0;
 
-	register int i;
-
-	for (i = 0; i < flags; i++)
-		if (func_arr[i].c == s)
-			return (func_arr[i].f);
-	return (NULL);
+	while (options[i].op)
+	{
+		if (options[i].op == s)
+		{
+			test.flag = 1;
+			test.print = options[i].operation;
+			return (test);
+		}
+		i++;
+	}
+	return (test);
 }
