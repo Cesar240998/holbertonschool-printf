@@ -23,13 +23,6 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i] == '%')
-			{
-				_putchar('%');
-				count++;
-				continue;
-			}
-
 			p = ch_option(format[i + 1]);
 			if (p.flag == 1)
 			{
