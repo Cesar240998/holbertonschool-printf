@@ -10,10 +10,10 @@
  * and a function pointer or NULL.
  */
 
-operation_t ch_option(char s)
+validates_t ch_option(char s)
 {
-	operation_t test = {0, NULL};
-	special_chars_t options[] = {
+	validates_t result = {0, NULL};
+	specifiers_t options[] = {
 		{'d', print_int},
 		{'c', print_char},
 		{'s', print_string},
@@ -27,11 +27,11 @@ operation_t ch_option(char s)
 	{
 		if (options[i].op == s)
 		{
-			test.flag = 1;
-			test.print = options[i].operation;
-			return (test);
+			result.flag = 1;
+			result.print = options[i].oper;
+			return (result);
 		}
 		i++;
 	}
-	return (test);
+	return (result);
 }
